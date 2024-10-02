@@ -1,25 +1,19 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import VideoPlayer from './components/VideoPlayer';
+import Comments from './components/Comments';
+import CTAButton from './components/CTAButton';
+import Title from './components/Title';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<div className='App'>
+			<Title />
+			<VideoPlayer />
+			<Comments />
+			<CTAButton />
+		</div>
+	);
 }
 
 export default App;
