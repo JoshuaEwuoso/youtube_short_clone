@@ -7,20 +7,98 @@
   background-color: white;
 }
 
+/*.app-content {
+  display: flex;
+  justify-content: space-between; /* Space between the video and comments 
+  align-items: flex-start; /* Aligns both to the top 
+  padding: 20px;
+}*/
+
 .video-container {
   width: 100%;
   max-width: 500px;
   aspect-ratio: 9/16; /* For the 1080x1920 video ratio */
   margin-bottom: 20px;
+  flex: 1; /* Take up as much width as possible */
+  max-width: 60%; /* Limit the video player width */
+  margin-right: 20px; /* Adds space between video and comments */
 }
 
 .comments-section {
   width: 100%;
   max-width: 500px;
   margin-bottom: 20px;
+  flex: 1; /* Take up the remaining space */
+  max-width: 35%; /* Limit the comments section width */
+  margin-left: 20px;
 }
 
 .cta-container {
   margin-top: 20px;
 }
 
+/* Media Query for Larger Monitors (above 1440px) */
+@media (min-width: 1440px) {
+  .app-content {
+    padding: 30px;
+  }
+
+  .video-container {
+    max-width: 55%;
+  }
+
+  .comments-section {
+    max-width: 40%;
+  }
+}
+
+/* Media Query for Desktop Screens (1024px - 1440px) */
+@media (min-width: 1024px) and (max-width: 1440px) {
+  .video-container {
+    max-width: 60%;
+  }
+
+  .comments-section {
+    max-width: 35%;
+  }
+}
+
+/* Media Query for Tablets (769px - 1023px) */
+@media (min-width: 769px) and (max-width: 1023px) {
+  .app-content {
+    flex-direction: column; /* Stack video and comments vertically */
+    padding: 10px;
+  }
+
+  .video-container {
+    max-width: 100%;
+    margin-right: 0;
+  }
+
+  .comments-section {
+    max-width: 100%;
+    margin-left: 0;
+    margin-top: 10px;
+  }
+}
+
+/* Media Query for Mobile Phones (up to 768px) */
+@media (max-width: 768px) {
+  .app-content {
+    flex-direction: column;
+    padding: 5px;
+  }
+
+  .video-container {
+    width: 100%;
+    max-width: 100%;
+    margin-right: 0;
+  }
+
+  .comments-section {
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+    margin-top: 10px;
+  }
+}
